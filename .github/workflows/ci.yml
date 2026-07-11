@@ -25,5 +25,10 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
       
-      - name: Run Application
-        run: python app.py
+      - name: Run Unit Tests
+        run: pytest
+
+      # - name: Run Application
+      #   run: python app.py
+
+      
