@@ -41,6 +41,15 @@ jobs:
       - name: Build Docker image
         run: docker build -t fastapi-app .
 
+      - name: Run Docker Container
+        run: docker run -d --name fastapi-container -p 8000:8000 fastapi-app
+
+      - name: Verify Container is Running
+        run: docker ps
+
+      - name: Show Container Logs
+        run: docker logs fastapi-container
+
       - name: List Docker images
         run: docker images
 
