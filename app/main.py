@@ -5,3 +5,7 @@ app = FastAPI()
 @app.get("/")
 def home():
     return {"message": "Hello Docker"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
