@@ -25,11 +25,12 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
       
-      - name: List files
+      - name: Debug repository
         run: |
           pwd
-          ls -la
-          find . -maxdepth 2 -type f
+          ls -R
+          python -c "import os; print('cwd=', os.getcwd())"
+          python -c "import sys; print(sys.path)"
 
       - name: Run Unit Tests
         run: pytest
